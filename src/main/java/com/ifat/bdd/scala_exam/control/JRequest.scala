@@ -1,4 +1,4 @@
-package com.ifat.bdd.scala_exam.controler
+package com.ifat.bdd.scala_exam.control
 
 import com.fasterxml.jackson.annotation.{JsonCreator, JsonProperty}
 

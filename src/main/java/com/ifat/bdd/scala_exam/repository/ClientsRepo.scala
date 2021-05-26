@@ -2,7 +2,6 @@ package com.ifat.bdd.scala_exam.repository
 
 import com.ifat.bdd.scala_exam.model.Client
 
-import scala.collection.IterableOnce.iterableOnceExtensionMethods
 import scala.collection.mutable.ArrayBuffer
 
 class ClientsRepo {

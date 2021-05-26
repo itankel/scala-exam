@@ -1,4 +1,4 @@
-package com.ifat.bdd.scala_exam.controler
+package com.ifat.bdd.scala_exam.control
 
 import com.ifat.bdd.scala_exam.model.Gender.Gender
 import com.ifat.bdd.scala_exam.model.MaritalStatus.MaritalStatus

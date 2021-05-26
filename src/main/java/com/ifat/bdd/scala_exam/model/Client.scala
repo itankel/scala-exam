@@ -1,6 +1,6 @@
 package com.ifat.bdd.scala_exam.model
 
-import com.ifat.bdd.scala_exam.controler.Request
+import com.ifat.bdd.scala_exam.control.Request
 import com.ifat.bdd.scala_exam.model.Gender.{Gender, NONE}
 import com.ifat.bdd.scala_exam.model.MaritalStatus.MaritalStatus
 
@@ -12,9 +12,6 @@ case class Client(firstName: String, lastName: String, gender: Gender, age: Int,
     s"maritalStatus=$maritalStatus numberOfChildern=$numberOfChildren")
 
 
-  //Request(minAge: Int, maxAge: Int, gender: Gender, prefixName: String,
-  //                   maritalStatus: MaritalStatus, numberOfChildren: Int)
-  //
   override def filterBy(request:Request): Boolean = {
     request match {
       case Request(-1, -1, NONE, "", MaritalStatus.NONE, -1) => true

@@ -1,7 +1,7 @@
 package com.ifat.bdd.scala_exam.extensions
 
-import com.ifat.bdd.scala_exam.controler
-import com.ifat.bdd.scala_exam.controler.{JRequest, Request}
+import com.ifat.bdd.scala_exam.control
+import com.ifat.bdd.scala_exam.control.{JRequest, Request}
 import com.ifat.bdd.scala_exam.model._
 
 import scala.collection.mutable.ArrayBuffer
@@ -26,15 +26,15 @@ object Extensions {
   implicit class RequestExtensionConverter(jRequest: JRequest) {
     def toRequest(): Request = {
       val request :Request = jRequest match {
-        case JRequest(null,null,null,null,null,null) =>controler.Request(-1,-1,Gender.NONE,"",MaritalStatus.NONE,-1)
-        case JRequest(minAge,null,null,null,null,null) => controler.Request(jRequest.minAge.toInt,-1,Gender.NONE,"",MaritalStatus.NONE,-1)
-        case JRequest(null,maxAge,null,null,null,null) => controler.Request(-1,jRequest.maxAge.toInt,Gender.NONE,"",MaritalStatus.NONE,-1)
-        case JRequest(minAge,maxAge,null,null,null,null) => controler.Request(jRequest.minAge.toInt,jRequest.maxAge.toInt,Gender.NONE,"",MaritalStatus.NONE,-1)
-        case JRequest(null,null,null,prefixName,null,null) => controler.Request(-1,-1,Gender.NONE,jRequest.prefixName,MaritalStatus.NONE,-1)
-        case JRequest(null,null,gender,null,null,null) => controler.Request(-1,-1,Gender.withName(jRequest.gender.toUpperCase),"",MaritalStatus.NONE,-1)
-        case JRequest(null,null,gender,null,maritalStatus,numberOfChildren) => controler.Request(-1,-1,Gender.withName(jRequest.gender.toUpperCase)
+        case JRequest(null,null,null,null,null,null) =>control.Request(-1,-1,Gender.NONE,"",MaritalStatus.NONE,-1)
+        case JRequest(minAge,null,null,null,null,null) => control.Request(jRequest.minAge.toInt,-1,Gender.NONE,"",MaritalStatus.NONE,-1)
+        case JRequest(null,maxAge,null,null,null,null) => control.Request(-1,jRequest.maxAge.toInt,Gender.NONE,"",MaritalStatus.NONE,-1)
+        case JRequest(minAge,maxAge,null,null,null,null) => control.Request(jRequest.minAge.toInt,jRequest.maxAge.toInt,Gender.NONE,"",MaritalStatus.NONE,-1)
+        case JRequest(null,null,null,prefixName,null,null) => control.Request(-1,-1,Gender.NONE,jRequest.prefixName,MaritalStatus.NONE,-1)
+        case JRequest(null,null,gender,null,null,null) => control.Request(-1,-1,Gender.withName(jRequest.gender.toUpperCase),"",MaritalStatus.NONE,-1)
+        case JRequest(null,null,gender,null,maritalStatus,numberOfChildren) => control.Request(-1,-1,Gender.withName(jRequest.gender.toUpperCase)
           ,"",MaritalStatus.withName(jRequest.maritalStatus.trim.toUpperCase),jRequest.numberOfChildren.toInt)
-        case _ => controler.Request(-1,-1,Gender.NONE,"",MaritalStatus.NONE,-1)
+        case _ => control.Request(-1,-1,Gender.NONE,"",MaritalStatus.NONE,-1)
       }
       request
     }
@@ -65,30 +65,4 @@ object Extensions {
       }
     }
   }
-
-  //  Person(                Client(
-  //  age: Int,                  age: Int
-  //  name: String,              firstName: String,
-  //                             lastName: String
-  //  gender: Gender,             gender: Gender
-  //  company: String,
-  //  email: String,              email: String,
-  //  phone: String,              phone: String,
-  //  address: String
-  //                              education: String,
-  //                              occupation: String,
-  //                              salary: Int,
-  //                              maritalStatus: MaritalStatus,
-  //                              numberOfChildren: Int)
-//
-//  implicit class ClientExtension(person: Person) {
-//    def toClient(): Client = {
-//      //      Client(firstName: String, lastName: String, gender: Gender, age: Int, email: String,
-//      //        phone: String, education: String, occupation: String,
-//      //        salary: Int, maritalStatus: MaritalStatus, numberOfChildren: Int)  extends Human {
-//      Client(person.name, "", person.gender, person.age, person.email, person.phone, "", "", 0, MaritalStatus.NONE, 0)
-//    }
-//  }
-
-
 }

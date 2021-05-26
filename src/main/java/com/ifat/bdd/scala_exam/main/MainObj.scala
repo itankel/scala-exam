@@ -33,5 +33,8 @@ object MainObj {
     listOfHuman.filter(human => FilterBy.filterBy(human, request)).foreach(human => println("requested > " + human))
     println("end")
 
+    // dump the response to console
+
+
   }
 }

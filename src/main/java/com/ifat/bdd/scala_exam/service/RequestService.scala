@@ -3,7 +3,7 @@ package com.ifat.bdd.scala_exam.service
 import java.io.File
 
 import com.fasterxml.jackson.databind.ObjectMapper
-import com.ifat.bdd.scala_exam.controler.{JRequest, Request}
+import com.ifat.bdd.scala_exam.control.{JRequest, Request}
 import com.ifat.bdd.scala_exam.extensions.Extensions.RequestExtensionConverter
 
 

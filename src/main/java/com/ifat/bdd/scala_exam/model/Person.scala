@@ -1,6 +1,6 @@
 package com.ifat.bdd.scala_exam.model
 
-import com.ifat.bdd.scala_exam.controler.Request
+import com.ifat.bdd.scala_exam.control.Request
 import com.ifat.bdd.scala_exam.model.Gender.{Gender, NONE}
 
 case class Person(age: Int, name: String, gender: Gender, company: String,

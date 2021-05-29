@@ -7,7 +7,7 @@ import com.ifat.bdd.scala_exam.service.{ClientsService, CollectService, FilterBy
 import com.ifat.bdd.scala_exam.validators.AgeEmailPhoneValidator
 
 class FlowExecute(config:Configuration) {
-  private val clientRepo = new ClientsRepo;
+  private val clientRepo = new ClientsRepo
   private val personsRepo = new PersonsRepo
 
   def run(): Unit = {
@@ -15,7 +15,7 @@ class FlowExecute(config:Configuration) {
     execute(getRequest())
   }
 
-  private def loadData()={
+  private def loadData():Unit={
     // first stage load data
     val clientsService = new ClientsService(config.getProperties(config.CLIENT_FILE_PATH), clientRepo, new AgeEmailPhoneValidator)
     val personsService = new PersonsService(config.getProperties(config.PERSON_FILE_PATH), personsRepo, new AgeEmailPhoneValidator)
